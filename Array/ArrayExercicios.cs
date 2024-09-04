@@ -15,7 +15,7 @@ namespace EstruturaDeDados.Array
         public ArrayExercicios()
         {
             arrayIntegerExample = [0, 20, 19, 4, 6, 14, 10];
-            arrayStringExample = ["Evelyn", "Marcos", "Cecília", "Zacarias", "Salsicha", "João", "Zacarias", "Thomas"];
+            arrayStringExample = ["Zebral", "Evelyn", "Marcos", "Cecília", "Zebra", "Salsicha", "João", "Zacarias", "Thomas"];
         }
 
         /// <summary>
@@ -55,9 +55,7 @@ namespace EstruturaDeDados.Array
                 aux = arrayStringExample[i];
                 j = i - 1;
 
-                int currentFirstLetter = char.ToLower(aux[0]);
-
-                while (j >= 0 && char.ToLower(arrayStringExample[j][0]) > currentFirstLetter)
+                while (j >= 0 && string.Compare(arrayStringExample[j], aux, StringComparison.InvariantCultureIgnoreCase) > 0)
                 {
                     arrayStringExample[j + 1] = arrayStringExample[j];
                     j--;
